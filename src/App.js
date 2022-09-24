@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import CharacterList from "./Components/CharacterList";
+import Navbar from "./Components/Navbar";
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+
+  const callBreakingBadAPI = async () => {
+    const url = `https://www.breakingbadapi.com/api/characters?name`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+    setCharacters(data);
+  };
+
+  useEffect(() => {
+    callBreakingBadAPI();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar />
+      {<CharacterList characters={characters} />}
     </div>
   );
 }
