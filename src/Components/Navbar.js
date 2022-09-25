@@ -4,7 +4,9 @@ import Logo from "../images/logo.png";
 const Navbar = () => {
   return (
     <header className="center">
-      <img src={Logo} alt="Logo" />
+      <a href="https://www.imdb.com/title/tt0903747/">
+        <img src={Logo} alt="Logo" />
+      </a>
     </header>
   );
 };
