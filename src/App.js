@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Components/Navbar";
+import Head from "./Components/Head";
 import ListGroup from "react-bootstrap/ListGroup";
 
 function App() {
@@ -19,13 +19,14 @@ function App() {
           as="li"
           className="d-flex justify-content-between align-items-start"
         >
-          <div className="ms-2 me-auto">
+          <div className="ms-2 me-auto" class="info">
             <a href="https://breakingbad.fandom.com/wiki/Category:Breaking_Bad_Characters">
               <img src={character.img} class="picture" alt="character"></img>
             </a>
-            <div className="fw-bold">Name: {character.name}</div>
-            <div>Birthday: {character.birthday}</div>
-            <div>Nickname: {character.nickname}</div>
+            <div class="info">Name: {character.name}</div>
+            <div class="info">Birthday: {character.birthday}</div>
+            <div class="info">Nickname: {character.nickname}</div>
+            <div class="info">Actor: {character.portrayed}</div>
           </div>
         </ListGroup.Item>
       </ListGroup>
@@ -48,7 +49,7 @@ function App() {
 
   return (
     <div className="container">
-      <Navbar />
+      <Head />
       {<CharacterList characters={characters} />}
     </div>
   );

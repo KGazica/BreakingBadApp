@@ -1,14 +1,14 @@
 import React from "react";
 import Logo from "../images/logo.png";
 
-const Navbar = () => {
+const Head = () => {
   return (
-    <header className="center">
+    <nav className="center">
       <a href="https://www.imdb.com/title/tt0903747/">
         <img src={Logo} alt="Logo" />
       </a>
-    </header>
+    </nav>
   );
 };
 
-export default Navbar;
+export default Head;
