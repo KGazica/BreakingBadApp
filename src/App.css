@@ -33,3 +33,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+section{
+  align-self: center;
+}
+
+.picture {
+  width: 250px;
+  height: 250px;
+}
+
+ul {
+  list-style-type: none;
+}

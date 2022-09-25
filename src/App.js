@@ -14,19 +14,17 @@ function App() {
 
   const CharacterListItem = ({ character }) => {
     return (
-      <ListGroup as="ul">
+      <ListGroup as="ul" horizontal>
         <ListGroup.Item
           as="li"
           className="d-flex justify-content-between align-items-start"
         >
           <div className="ms-2 me-auto">
-            <div className="fw-bold">
-              Name:{" "}
-              <a href="https://breakingbad.fandom.com/wiki/Category:Breaking_Bad_Characters">
-                {character.name}
-              </a>
-            </div>
-            Birthday: {character.birthday}
+            <a href="https://breakingbad.fandom.com/wiki/Category:Breaking_Bad_Characters">
+              <img src={character.img} class="picture" alt="character"></img>
+            </a>
+            <div className="fw-bold">Name: {character.name}</div>
+            <div>Birthday: {character.birthday}</div>
             <div>Nickname: {character.nickname}</div>
           </div>
         </ListGroup.Item>
