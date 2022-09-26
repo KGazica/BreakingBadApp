@@ -1,7 +1,7 @@
 html,body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 color: whitesmoke;
-background: url('./images/background.jpg') no-repeat center center/cover;
+background: url('./images/bg.jpg') no-repeat center center/cover;
 background-attachment: fixed;
 }
 
@@ -24,6 +24,7 @@ width: 200px;
 display: flex;
 align-items: center;
 justify-content: center;
+padding-bottom: 50px;
 }
 
 li {
@@ -48,6 +49,6 @@ ul {
   list-style-type: none;
 }
 
-.info {
+#info {
 text-align: center;}
 
