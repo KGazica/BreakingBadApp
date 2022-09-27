@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import Head from "./Components/Head";
 import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  // <Router>
-  //   <div>
-  //     <link to="./Components/Info">Info</link>
-  //   </div>
-  // </Router>;
 
   const callBreakingBadAPI = async () => {
     const url = `https://www.breakingbadapi.com/api/characters?name`;
@@ -34,11 +30,7 @@ function App() {
               ></img>
             </a>
             <div className="info">
-              <Link
-                target="_blank"
-                to="./Info"
-                state={{ data: character.name }}
-              >
+              <Link target="_blank" to="./Info" state={{ data: character }}>
                 Name: {character.name}
               </Link>
             </div>
