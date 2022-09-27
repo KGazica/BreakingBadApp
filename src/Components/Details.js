@@ -1,11 +1,8 @@
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-// import Home from "./Components/Home";
-import Details from "./Components/Details";
 import React, { useState, useEffect } from "react";
-import Head from "./Components/Head";
+import Head from "./Head";
 import ListGroup from "react-bootstrap/ListGroup";
 
-function App() {
+function Details() {
   const [characters, setCharacters] = useState([]);
 
   const callBreakingBadAPI = async () => {
@@ -23,13 +20,17 @@ function App() {
           className="d-flex justify-content-between align-items-start"
         >
           <div className="ms-2 me-auto" id="info">
-            <img src={character.img} className="picture" alt="character"></img>
-
-            <div className="info">
-              <Link target="_blank" to="Details">
-                Name: {character.name}
-              </Link>
-            </div>
+            <a href="https://breakingbad.fandom.com/wiki/Category:Breaking_Bad_Characters">
+              <img
+                src={character.img}
+                className="picture"
+                alt="character"
+              ></img>
+            </a>
+            <div className="info">Name: {character.name}</div>
+            <div className="info">Birthday: {character.birthday}</div>
+            <div className="info">Nickname: {character.nickname}</div>
+            <div className="info">Actor: {character.portrayed}</div>
           </div>
         </ListGroup.Item>
       </ListGroup>
@@ -49,20 +50,13 @@ function App() {
   useEffect(() => {
     callBreakingBadAPI();
   }, []);
+
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          {/* <Route exact path="Home" element={<Home />} /> */}
-          <Route exact path="Details" element={<Details />} />
-        </Routes>
-        <div className="container">
-          <Head />
-          {<CharacterList characters={characters} />}
-        </div>
-      </Router>
+    <div className="container">
+      <Head />
+      {<CharacterList characters={characters} />}
     </div>
   );
 }
 
-export default App;
+export default Details;
